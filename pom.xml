@@ -6,40 +6,86 @@
 
     <groupId>com.tsekot.remindme.server</groupId>
     <artifactId>com.tsekot.remindme.server</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1</version>
     <packaging>war</packaging>
+
+    <properties>
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.data-jpa.version>1.9.2.RELEASE</spring.data-jpa.version>
+        <servlet.version>3.1.0</servlet.version>
+        <hibernate.version>5.0.2.Final</hibernate.version>
+        <mysql.version>5.1.39</mysql.version>
+        <JSON.version>2.8.8</JSON.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
+        <!--WEB-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${servlet.version}</version>
+        </dependency>
+        <!--JSON Converter-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${JSON.version}</version>
+        </dependency>
+
+        <!--Database-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.data-jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1.1</version>
         </dependency>
 
 
     </dependencies>
     <!--<build>-->
-        <!--<finalName>app</finalName>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-war-plugin</artifactId>-->
-                <!--<version>2.5</version>-->
-                <!--<configuration>-->
-                    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
+    <!--<finalName>app</finalName>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-war-plugin</artifactId>-->
+    <!--<version>2.5</version>-->
+    <!--<configuration>-->
+    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
     <!--</build>-->
 </project>
